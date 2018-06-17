@@ -14,6 +14,7 @@
         - rhel-7-server-extras-rpms
         - rhel-7-server-optional-rpms
         - rhel-7-server-ose-3.9-rpms
+        - rhel-7-fast-datapath-rpms
 
     - name: Update metadata of repos
       command: "createrepo --update {{ location }}/{{ item }}"
@@ -22,3 +23,4 @@
         - rhel-7-server-extras-rpms
         - rhel-7-server-optional-rpms
         - rhel-7-server-ose-3.9-rpms
+        - rhel-7-fast-datapath-rpms
