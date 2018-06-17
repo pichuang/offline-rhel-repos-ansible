@@ -11,7 +11,7 @@
       command: "/usr/bin/reposync --gpgcheck -l --downloadcomps --download-metadata --repoid={{ item }} --download_path={{ location }}"
       with_items:
         - rhel-7-server-rpms
-        - rhel-7-server-extra-rpms
+        - rhel-7-server-extras-rpms
         - rhel-7-server-optional-rpms
 
     - name: Update metadata of repos
