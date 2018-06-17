@@ -15,4 +15,4 @@
         - rhel-7-server-optional-rpms
 
     - name: Update metadata of repos
-      command: "createrepos --update {{ location }}"
+      command: "createrepo --update {{ location }}"
