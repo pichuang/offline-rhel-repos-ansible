@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+  - name: Ensure neccesary packages are installed
+    yum:
+      name: "{{ item }}"
+      state: installed
+    with_items:
+      - yum-utils
+      - createrepo
