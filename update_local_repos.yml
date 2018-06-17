@@ -16,4 +16,9 @@
         - rhel-7-server-ose-3.9-rpms
 
     - name: Update metadata of repos
-      command: "createrepo --update {{ location }}"
+      command: "createrepo --update {{ location }}/{{ item }}"
+      with_items:
+        - rhel-7-server-rpms
+        - rhel-7-server-extras-rpms
+        - rhel-7-server-optional-rpms
+        - rhel-7-server-ose-3.9-rpms
