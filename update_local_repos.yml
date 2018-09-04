@@ -16,6 +16,8 @@
         - rhel-7-server-ose-3.9-rpms
         - rhel-7-fast-datapath-rpms
         - rhel-7-server-3scale-amp-2.2-rpms
+        - rhel-7-server-rhv-4-mgmt-agent-rpms
+        - rhel-7-server-ansible-2-rpms
 
     - name: Update metadata of repos
       command: "createrepo --update {{ location }}/{{ item }}"
@@ -26,3 +28,5 @@
         - rhel-7-server-ose-3.9-rpms
         - rhel-7-fast-datapath-rpms
         - rhel-7-server-3scale-amp-2.2-rpms
+        - rhel-7-server-rhv-4-mgmt-agent-rpms
+        - rhel-7-server-ansible-2-rpms
