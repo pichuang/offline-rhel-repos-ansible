@@ -16,17 +16,10 @@
         - rhel-7-server-optional-rpms
         # OCP
         - rhel-7-server-ose-3.9-rpms
+        - rhel-7-server-ose-3.10-rpms
         - rhel-7-fast-datapath-rpms
         # 3Scale
         - rhel-7-server-3scale-amp-2.2-rpms
-        # RHV
-        - rhel-7-server-rhv-4-mgmt-agent-rpms
-        - rhel-7-server-ansible-2-rpms
-        # RHV-M
-        - rhel-7-server-supplementary-rpms
-        - rhel-7-server-rhv-4.2-manager-rpms
-        - rhel-7-server-rhv-4-manager-tools-rpms
-        - jb-eap-7-for-rhel-7-server-rpms
 
     - name: Update metadata of repos
       command: "createrepo --update {{ location }}/{{ item }}"
@@ -35,11 +28,6 @@
         - rhel-7-server-extras-rpms
         - rhel-7-server-optional-rpms
         - rhel-7-server-ose-3.9-rpms
+        - rhel-7-server-ose-3.10-rpms
         - rhel-7-fast-datapath-rpms
         - rhel-7-server-3scale-amp-2.2-rpms
-        - rhel-7-server-rhv-4-mgmt-agent-rpms
-        - rhel-7-server-ansible-2-rpms
-        - rhel-7-server-supplementary-rpms
-        - rhel-7-server-rhv-4.2-manager-rpms
-        - rhel-7-server-rhv-4-manager-tools-rpms
-        - jb-eap-7-for-rhel-7-server-rpms
