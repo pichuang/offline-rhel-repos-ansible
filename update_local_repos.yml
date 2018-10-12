@@ -1,6 +1,16 @@
 - hosts: all
   vars:
     location: "/srv/mirror"
+    mirror_list:
+      # Common Server
+      - rhel-7-server-rpms
+      - rhel-7-server-extras-rpms
+      - rhel-7-server-optional-rpms
+      # OCP
+      - rhel-7-server-ose-3.9-rpms
+      - rhel-7-server-ose-3.10-rpms
+      - rhel-7-server-ose-3.11-rpms
+      - rhel-7-fast-datapath-rpms
   tasks:
     - name: Check mirror path is exist
       file:
@@ -10,24 +20,9 @@
     - name: Update specific repos
       command: "/usr/bin/reposync --gpgcheck -l --downloadcomps --download-metadata --repoid={{ item }} --download_path={{ location }}"
       with_items:
-        # Common Server
-        - rhel-7-server-rpms
-        - rhel-7-server-extras-rpms
-        - rhel-7-server-optional-rpms
-        # OCP
-        - rhel-7-server-ose-3.9-rpms
-        - rhel-7-server-ose-3.10-rpms
-        - rhel-7-fast-datapath-rpms
-        # 3Scale
-        - rhel-7-server-3scale-amp-2.2-rpms
+        - "{{ mirror_list }}"
 
     - name: Update metadata of repos
       command: "createrepo --update {{ location }}/{{ item }}"
       with_items:
-        - rhel-7-server-rpms
-        - rhel-7-server-extras-rpms
-        - rhel-7-server-optional-rpms
-        - rhel-7-server-ose-3.9-rpms
-        - rhel-7-server-ose-3.10-rpms
-        - rhel-7-fast-datapath-rpms
-        - rhel-7-server-3scale-amp-2.2-rpms
+        - "{{ mirror_list }}"
