@@ -12,7 +12,7 @@
       #SCL
       - rhel-server-rhscl-7-rpms
       # HA
-      - rhel-ha-for-rhel-7-server-rpms
+      #- rhel-ha-for-rhel-7-server-rpms
   tasks:
     - name: Check mirror path is exist
       file:
