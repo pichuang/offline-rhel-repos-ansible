@@ -23,7 +23,7 @@
         state: directory
 
     - name: Update specific repos
-      command: "/usr/bin/reposync --newest-only --gpgcheck -l --downloadcomps --download-metadata --repoid={{ item }} --download_path={{ location }}"
+      command: "/usr/bin/reposync --newest-only --gpgcheck -l --downloadcomps --download-metadata --setopt=repo_id.module_hotfixes=1  --repoid={{ item }} --download_path={{ location }}"
       with_items:
         - "{{ mirror_list }}"
 
