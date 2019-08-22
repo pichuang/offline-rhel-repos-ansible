@@ -12,8 +12,8 @@
       #SCL
       - rhel-server-rhscl-7-rpms
       # RHEL8
-      - rhel-8-for-x86_64-baseos-rpms
-      - rhel-8-for-x86_64-appstream-rpms
+      #- rhel-8-for-x86_64-baseos-rpms
+      #- rhel-8-for-x86_64-appstream-rpms
       # HA
       #- rhel-ha-for-rhel-7-server-rpms
   tasks:
@@ -23,7 +23,7 @@
         state: directory
 
     - name: Update specific repos
-      command: "/usr/bin/reposync --newest-only --gpgcheck -l --downloadcomps --download-metadata --setopt=repo_id.module_hotfixes=1  --repoid={{ item }} --download_path={{ location }}"
+      command: "/usr/bin/reposync --newest-only --gpgcheck -l --downloadcomps --download-metadata --repoid={{ item }} --download_path={{ location }}"
       with_items:
         - "{{ mirror_list }}"
 
