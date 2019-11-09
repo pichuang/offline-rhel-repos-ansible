@@ -2,8 +2,6 @@
   tasks:
   - name: Ensure neccesary packages are installed
     yum:
-      name: "{{ item }}"
+      name: ['yum-utils', 'createrepo']
       state: installed
-    with_items:
-      - yum-utils
-      - createrepo
+    become: true
