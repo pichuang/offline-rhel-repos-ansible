@@ -1,0 +1,19 @@
+- hosts: all
+  vars:
+    location: "/srv/mirror"
+    mirror_list:
+      # Basic
+      - rhel-8-for-x86_64-appstream-rpms
+      - rhel-8-for-x86_64-baseos-rpms
+  tasks:
+    - name: Check mirror path is exist
+      file:
+        path: "{{ location }}"
+        state: directory
+
+    - name: Update specific repos
+      command: "/usr/bin/reposync --newest-only --download-metadata --repoid={{ item }} --downloaddir={{ location }}"
+      with_items:
+        - "{{ mirror_list }}"
+      become: true
+
