@@ -6,6 +6,7 @@
       - rhel-8-for-x86_64-appstream-rpms
       - rhel-8-for-x86_64-baseos-rpms
       - ansible-2.9-for-rhel-8-x86_64-rpms
+      - jb-eap-7.2-for-rhel-8-x86_64-rpms
   tasks:
     - name: Check mirror path is exist
       file:
