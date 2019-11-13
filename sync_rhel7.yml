@@ -13,6 +13,8 @@
       - rhel-server-rhscl-7-rpms
       # HA
       - rhel-ha-for-rhel-7-server-rpms
+      # SSO
+      - jb-eap-7.2-for-rhel-7-server-rpms
   tasks:
     - name: Check mirror path is exist
       file:
