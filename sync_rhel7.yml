@@ -16,6 +16,11 @@
       # SSO
       - jb-eap-7.2-for-rhel-7-server-rpms
       - rh-sso-7.3-for-rhel-7-server-rpms
+      # Ceph 3
+      - rhel-7-server-rhceph-3-mon-rpms
+      - rhel-7-server-rhceph-3-tools-rpms
+      - rhel-7-server-rhceph-3-textonly-rpms
+      - rhel-7-server-rhceph-3-osd-rpms
   tasks:
     - name: Check mirror path is exist
       file:
