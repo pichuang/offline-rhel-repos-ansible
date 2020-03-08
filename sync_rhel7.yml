@@ -21,6 +21,11 @@
       - rhel-7-server-rhceph-3-tools-rpms
       - rhel-7-server-rhceph-3-textonly-rpms
       - rhel-7-server-rhceph-3-osd-rpms
+      # Ceph 4
+      - rhel-7-server-ansible-2.8-rpms
+      - rhel-7-server-rhceph-4-mon-rpms
+      - rhel-7-server-rhceph-4-osd-rpms
+      - rhel-7-server-rhceph-4-tools-rpms
   tasks:
     - name: Check mirror path is exist
       file:
