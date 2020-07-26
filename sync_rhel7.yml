@@ -34,7 +34,7 @@
 
 
     - name: Update specific repos
-      command: "/usr/bin/reposync --newest-only --gpgcheck -l --downloadcomps --download-metadata --repoid={{ item }} --download_path={{ location }} --excludes=*.repodata"
+      command: "/usr/bin/reposync --newest-only --gpgcheck -l --downloadcomps --download-metadata --repoid={{ item }} --download_path={{ location }} --exclude=*.repodata"
       with_items:
         - "{{ mirror_list }}"
 
