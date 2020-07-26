@@ -32,6 +32,11 @@
         path: "{{ location }}"
         state: directory
 
+    - name: Hotfix - Keep /srv/mirror/rhel-7-server-rpms/.repodata Empty
+      file:
+        path: /srv/mirror/rhel-7-server-rpms/.repodata
+        state: absent
+
     - name: Update specific repos
       command: "/usr/bin/reposync --newest-only --gpgcheck -l --downloadcomps --download-metadata --repoid={{ item }} --download_path={{ location }}"
       with_items:
