@@ -18,7 +18,16 @@
 
     - name: Update specific repos
       command: "dnf reposync --newest-only --downloadcomps --download-metadata --repoid={{ item }} --downloaddir={{ location }}"
-      with_items:
+      loop:
         - "{{ mirror_list }}"
       become: true
 
+    - name: Make sure permission 655
+      file:
+        path: "{{ location }}/{{ item }}"
+        owner: root
+        group: root
+        mode: '0655'
+        recurse: yes
+      loop:
+        - "{{ mirror_list }}"
