@@ -19,7 +19,7 @@
 
     - name: Update specific repos
       command: "dnf reposync --newest-only --downloadcomps --download-metadata --repoid={{ item }} --downloaddir={{ location }}"
-      loop:
+      with_items:
         - "{{ mirror_list }}"
       become: true
 
