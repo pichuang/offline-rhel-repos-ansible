@@ -30,3 +30,4 @@
         recurse: yes
       with_items:
         - "{{ mirror_list }}"
+      become: true
