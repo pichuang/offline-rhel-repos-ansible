@@ -7,8 +7,6 @@
       - rhel-8-for-x86_64-baseos-eus-rpms
       - ansible-2.9-for-rhel-8-x86_64-rpms
       - rhel-8-for-x86_64-highavailability-eus-rpms
-      # SSO
-      - jb-eap-7.2-for-rhel-8-x86_64-rpms
       # CNV
       - cnv-2.4-for-rhel-8-x86_64-rpms
   tasks:
