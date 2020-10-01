@@ -1,0 +1,12 @@
+- hosts: all
+  vars:
+    location: "/srv/mirror"
+  tasks:
+    - name: Fixed permission
+      file:
+        path: "{{ location }}"
+        owner: root
+        group: root
+        mode: u=rwX,g=rX,o=rX
+        recurse: yes
+      become: true

@@ -21,13 +21,3 @@
         - "{{ mirror_list }}"
       become: true
 
-    - name: Make sure permission 655
-      file:
-        path: "{{ location }}/{{ item }}"
-        owner: root
-        group: root
-        mode: '0655'
-        recurse: yes
-      with_items:
-        - "{{ mirror_list }}"
-      become: true
