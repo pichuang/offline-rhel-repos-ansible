@@ -28,5 +28,5 @@
         group: root
         mode: '0655'
         recurse: yes
-      loop:
+      with_items:
         - "{{ mirror_list }}"
